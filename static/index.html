@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Holo >> Talk スタッフ着信画面</title>
+    <link rel="stylesheet" href="static/site.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Holo >> Talk スタッフ着信画面</h1>
+      <button id="startup-button">デバイスを起動</button>
+    </header>
+
+    <main id="controls">
+      <section class="left-column" id="info">
+        <h2>端末情報</h2>
+        <div id="client-name"></div>
+        <div id="output-selection" class="hide">
+          <label>着信音先</label>
+          <select id="ringtone-devices" multiple></select>
+          <label>スピーカー先</label>
+          <select id="speaker-devices" multiple></select
+          ><br />
+          <button id="get-devices">音声デバイス更新</button>
+        </div>
+      </section>
+
+      <section class="center-column">
+        <h2 class="instructions">発信・着信画面</h2>
+        <div id="call-controls" class="hide">
+          <form>
+            <label for="phone-number"
+              >発信先の電話番号を入力してください。</label
+            >
+            <input id="phone-number" type="text" placeholder="+15552221234" />
+            <button id="button-call" type="submit">発信</button>
+          </form>
+          <button id="button-hangup-outgoing" class="hide">電話を終了</button>
+          <div id="incoming-call" class="hide">
+            <h2>Incoming Call Controls</h2>
+            <p class="instructions">
+              着信あり<span id="incoming-number"></span>
+            </p>
+            <button id="button-accept-incoming">応答</button>
+            <button id="button-reject-incoming">拒否</button>
+            <button id="button-hangup-incoming" class="hide">電話を終了</button>
+          </div>
+          <div id="volume-indicators" class="hide">
+            <label>マイクボリューム</label>
+            <div id="input-volume"></div>
+            <br /><br />
+            <label>スピーカーボリューム</label>
+            <div id="output-volume"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-column">
+        <h2>イベントログ</h2>
+        <div class="hide" id="log"></div>
+      </section>
+    </main>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="static/twilio.min.js"></script>
+    <script src="static/quickstart.js"></script>
+  </body>
+</html>
